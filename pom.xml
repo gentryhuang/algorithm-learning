@@ -12,7 +12,8 @@
         <module>algorithm-basis</module>
         <module>algorithm-advanced</module>
         <module>algorithm-intermediate</module>
-        <module>algorithm-combat</module>
+        <module>algorithm-produce</module>
+        <module>algorithm-produce</module>
     </modules>
 
 
