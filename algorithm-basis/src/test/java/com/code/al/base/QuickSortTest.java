@@ -1,6 +1,7 @@
 package com.code.al.base;
 
 import com.code.al.base.common.SortTool;
+import com.code.al.base.sort.quick.QuickSort;
 
 /**
  * QuickSortTest

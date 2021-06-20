@@ -1,4 +1,4 @@
-package com.code.al.base;
+package com.code.al.base.sort.quick;
 
 public class Quicksort2 {
     public static void sort(int[] arr) {
@@ -7,31 +7,29 @@ public class Quicksort2 {
 
     private static void msort(int[] arr, int left, int right) {
         if (left < right) {
-            return;
+            int pivotIndex = findPivotIndex(arr, left, right);
+            msort(arr, left, pivotIndex - 1);
+            msort(arr, pivotIndex + 1, right);
         }
-        int pivotIndex = findPivotIndex(arr, left, right);
-        msort(arr, left, pivotIndex - 1);
-        msort(arr, pivotIndex + 1, right);
+
     }
 
     private static int findPivotIndex(int[] arr, int left, int right) {
-        int pivotIndex = right;
-        int pivot = arr[pivotIndex];
-        left--;
-        right++;
-        while (true) {
-            while (arr[++left] <= pivot && left <= right) ;
-            while (arr[--right] > pivot && right >= left) ;
-            if (left < right) {
-                swap(arr, left, right);
+        int pivot = arr[right];
+        int less = left-1;
+        int more = right;
+        while (left < more) {
+            if(arr[left] < pivot){
+                swap(arr,++less,left++);
+            }else if(arr[left] >= pivot){
+                swap(arr,left,--more);
+            }else {
+                left++;
             }
-            break;
         }
-        if (left > pivotIndex) {
-            swap(arr, pivotIndex, left);
-            pivotIndex = left;
-        }
-        return pivotIndex;
+        swap(arr,more,right);
+
+        return more;
     }
 
     private static void swap(int[] arr, int left, int right) {

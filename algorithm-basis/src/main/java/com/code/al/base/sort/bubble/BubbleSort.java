@@ -1,4 +1,4 @@
-package com.code.al.base;
+package com.code.al.base.sort.bubble;
 
 import static com.code.al.base.common.SortTool.swap;
 

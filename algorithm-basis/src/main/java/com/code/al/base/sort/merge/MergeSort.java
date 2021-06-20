@@ -1,4 +1,4 @@
-package com.code.al.base;
+package com.code.al.base.sort.merge;
 
 /**
  * MergeSort
